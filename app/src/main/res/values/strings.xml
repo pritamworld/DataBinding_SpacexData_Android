@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MidTerm_SpacexData_Android</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="required">*Required</string>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="imageUrl"
+            type="String" />
+        <variable
+            name="launch"
+            type="com.pritesh.midterm_spacexdata_android.models.Launches"/>
+    </data>
+    <RelativeLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.LaunchesDetailFragment">
+
+        <ImageView
+            android:id="@+id/imgLaunch"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            app:launchesImage="@{imageUrl}"/>
+
+        <TextView
+            android:id="@+id/txtLaunchDate"
+            style="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgLaunch"
+            android:padding="16dp"
+            android:text="@{launch.launchDateLocal}"
+            android:textColor="#23356C"
+            android:textIsSelectable="true"
+            android:textStyle="bold"
+            tools:text="Launch Date"/>
+
+        <TextView
+            android:id="@+id/txtDetails"
+            style="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLaunchDate"
+            android:padding="16dp"
+            android:text="@{launch.details}"
+            android:textIsSelectable="true"
+            android:textSize="18sp"
+            tools:text="Details"/>
+
+        <TextView
+            android:id="@+id/txtLaunchSiteName"
+            style="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDetails"
+            android:padding="16dp"
+            android:text="@{launch.launchSite.siteNameLong}"
+            android:textIsSelectable="true"
+            android:textSize="18sp"
+            tools:text="Launch Site Name"/>
+
+        <TextView
+            android:id="@+id/txtRocketName"
+            style="?android:attr/textAppearanceLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLaunchSiteName"
+            android:padding="16dp"
+            android:text="@{launch.rocket.rocketName}"
+            android:textIsSelectable="true"
+            android:textSize="18sp"
+            tools:text="Rocket Name"/>
+    </RelativeLayout>
+</layout>
